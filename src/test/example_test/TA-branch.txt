@@ -1,0 +1,28 @@
+comp5111.assignment.cut.Regression_10_Test - Branch Coverage
+
+Overview:
+********************************************************************************************
+Overall: 
+total: 554   covered: 259   percentage: 46.8%
+
+comp5111.assignment.cut.Subject$TextUtils
+total: 226   covered: 118   percentage: 52.2%
+
+comp5111.assignment.cut.Subject$DateTimeUtils
+total: 140   covered: 75    percentage: 53.6%
+
+comp5111.assignment.cut.Subject$WebUtils
+total: 188   covered: 66    percentage: 35.1%
+
+...(omitted)...
+
+
+Details:
+********************************************************************************************
+
+comp5111.assignment.cut.Subject$TextUtils
+
+String abbreviate(String, String, int, int)
+Missed	branch: str == null == 1
+Covered	branch: str == null == 0
+...(omitted)...

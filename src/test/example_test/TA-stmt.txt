@@ -1,0 +1,28 @@
+comp5111.assignment.cut.Regression_10_Test - Statement Coverage
+
+Overview:
+********************************************************************************************
+Overall: 
+total: (*omitted*)  covered: (*omitted*)   percentage: 53.3%
+
+comp5111.assignment.cut.Subject$TextUtils
+total: (*omitted*)   covered: (*omitted*)   percentage: 65.5%
+
+comp5111.assignment.cut.Subject$DateTimeUtils
+total: (*omitted*)   covered: (*omitted*)   percentage: 48.3%
+
+comp5111.assignment.cut.Subject$WebUtils
+total: (*omitted*)   covered: (*omitted*)   percentage: 46.4%
+
+...(omitted)...
+
+
+Details:
+********************************************************************************************
+
+comp5111.assignment.cut.Subject$TextUtils
+
+String abbreviate(String, String, int, int)
+Covered	StmtType: JIfStmt  Statement: if str == null goto (branch)	LineNo.: 727
+Covered	StmtType: JAssignStmt  Statement: $stack36 = ""	LineNo.: 727
+...(omitted)...
