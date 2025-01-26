@@ -2,6 +2,9 @@
 
 ## Deadline: 11:55 pm, 15 March 2025
 
+## Update:
+(Jan 26): Release the [tutorial workshop slide (preview version)](tutorials/COMP5111_25S_workshop_songqiang_jan26previewver.pdf). *You are highly recommended to preview the slide (and play with the tools if interested) before the tutorial on Feb 12.*
+
 ## Assignment Objective
 
 In assignment 1, you are expected to: 
