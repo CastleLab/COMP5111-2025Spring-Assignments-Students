@@ -1,5 +1,9 @@
 package comp5111.assignment;
 
+import comp5111.assignment.instrument.coverage.*;
+import comp5111.assignment.instrument.runtime.Profiler;
+import comp5111.assignment.tools.JUnit;
+
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -14,20 +18,27 @@ public class Assignment1 {
             System.err.println("Usage: [coverage level] = 1 for branch coverage");
             System.exit(0);
         }
+        String coverage = "Unknown";
+
+        String testSuite = args[1];
 
         // these args will be passed into soot.
-        String[] classNames = Arrays.copyOfRange(args, 1, args.length);
+        String[] sootArgs = Arrays.copyOfRange(args, 2, args.length);
 
         if (args[0].compareTo("0") == 0) {
-            // TODO invoke your statement coverage instrument function
-
-            // TODO run tests on instrumented classes to generate coverage report
-
+            coverage = "Statement";
+            // invoke your statement coverage instrument function
+            SootDriver.instrument(StatementTestRequirement.class, StatementInstrumenter.class, sootArgs);
         } else if (args[0].compareTo("1") == 0) {
-            // TODO invoke your branch coverage instrument function
-
-            // TODO run tests on instrumented classes to generate coverage report
-
+            coverage = "Branch";
+            // invoke your branch coverage instrument function
+            SootDriver.instrument(BranchTestRequirement.class, BranchInstrumenter.class, sootArgs);
         }
+        Class<?> testClass = Class.forName(testSuite);
+        Profiler.v().reset();
+        System.out.println("Running test suite " + testSuite);
+        System.out.println("Measuring " + coverage + " coverage");
+        JUnit.run(testClass);
+        Profiler.v().generateReport("src/test/report", testSuite, coverage);
     }
 }
